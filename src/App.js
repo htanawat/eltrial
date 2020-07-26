@@ -35,8 +35,11 @@ const to_4_dec = (x) => {
 const searchMenus = () => {
   var keyword = $("#search-input").val();
 
-  fetch("assets/test.json").then(res => res.json()).then((json) => {
+  fetch(`http://54.253.142.42:8000/?keyword=${keyword}`, {
+
+  }).then(res => res.json()).then((json) => {
     var result = $("#result");
+    result.html("")
     console.log(json)
     var _min_prices = [];
     var _avg_prices = [];
